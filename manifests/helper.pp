@@ -1,4 +1,5 @@
 define sshauthkeys::helper ($user,$ensure='present') {
+        $ssh_keys = hiera_hash('ssh_keys')
         notice ("${name}")
         $name2=regsubst($name,"-${user}\$","")
         notice ("${name2}")
