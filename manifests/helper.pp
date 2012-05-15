@@ -1,8 +1,6 @@
 define sshauthkeys::helper ($user,$ensure='present') {
         $ssh_keys = hiera_hash('ssh_keys')
-        notice ("${name}")
         $name2=regsubst($name,"-${user}\$","")
-        notice ("${name2}")
 	if has_key($ssh_keys["${name2}"], "ensure") {
 		$ensurekey = $ssh_keys["${name2}"]["ensure"]
 	} else {
